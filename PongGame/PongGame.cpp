@@ -4,29 +4,37 @@
 #include "pch.h"
 #include <iostream>
 #include "Paddle.h"
+#include "Ball.h"
 #include <string>
+#include <conio.h>
 
 int main()
 {
 	
-	Paddle paddle(0,3);
-	std::cout << paddle.displayCords();
+	//Paddle paddle(0,3);
+	//std::cout << paddle.displayCords();
 
-	while (true)
+	Ball b;
+	int count = 0;
+	while (count < 5)
 	{
-		std::string userInput;
-		std::cin >> userInput;
-		if (userInput == "w") {
-			
+		//Paddle working movement code.
+	/*	char in = ' ';
+		in = _getch();
+		if (in == 'w') {
+
 			paddle.moveUp();
 		}
-		else if (userInput == "s") {
+		else if (in == 's') {
 			paddle.moveDown();
 		}
 		else {
 			std::cout << "Wrong input" << std::endl;
 		}
-		std::cout << paddle.displayCords();
+		std::cout << paddle.displayCords(); */
+		b.updatePosition();
+		std::cout << b.displayCords();
+		count++;
 	}
 }
 
