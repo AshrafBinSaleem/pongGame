@@ -3,17 +3,20 @@
 #include "velocity.h"
 #include <iostream>
 #include <sstream>
+#include "Screen.h"
 
-class Ball
+class Ball : public coordinate
 {
-	coordinate coor;
 	velocity v;
 public:
 	Ball();
+	
+	Ball(int x,int y, int vx, int vy, Screen sn);
+
 	~Ball();
 	
 	void updatePosition() {
-		coor.changePosition(v, 1);
+		changePosition(v, 1);
 	}
 
 	std::string displayCords();

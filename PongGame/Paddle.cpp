@@ -2,19 +2,18 @@
 #include "Paddle.h"
 
 
-Paddle::Paddle()
+Paddle::Paddle() : coordinate()
 {
-	x = 0;
-	y = 0;
 	size = 1;
 	name = "paddle";
 	pattern = '|';
 }
 
-Paddle::Paddle(int _x, int _y) : Paddle()
+Paddle::Paddle(int _x, int _y, Screen sn) : coordinate(_x, _y, sn.getWidth(), sn.getLength())
 {
-	x = _x;
-	y = _y;
+	size = 1;
+	name = "paddle";
+	pattern = '|';
 }
 
 
@@ -28,9 +27,3 @@ std::string Paddle::displayCords() {
 	return tmp.str();
 }
 
-void Paddle::moveUp() {
-	y--;
-}
-void Paddle::moveDown() {
-	y++;
-}

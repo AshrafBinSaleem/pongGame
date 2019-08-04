@@ -3,13 +3,27 @@
 
 class coordinate
 {
-public:
+protected:
 	int x;
 	int y;
-	coordinate();
-	~coordinate();
+	int width;
+	int lenght;
 
+public:
+	void moveUp();
+	void moveDown();
+	void checkBoundary();
+	void checkBoundaryBounce(velocity& c);
+	coordinate();
+	coordinate(int _x, int _y, int w, int l);
+	~coordinate();
+	
+	int getX() { return x; }
+	int getY() { return y; }
+
+	void setX(int _x) { x = _x; }
+	void setY(int _y) { y = _y; }
 	//c represents speed and dt represents data time.
-	void changePosition(velocity c, int dt);
+	void changePosition(velocity& c, int dt);
 };
 
