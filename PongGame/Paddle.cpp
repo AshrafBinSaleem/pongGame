@@ -4,16 +4,16 @@
 
 Paddle::Paddle() : coordinate()
 {
-	size = 1;
-	name = "paddle";
-	pattern = '|';
+	m_size = 1;
+	m_name = "paddle";
+	m_pattern = '|';
 }
 
-Paddle::Paddle(int _x, int _y, Screen sn) : coordinate(_x, _y, sn.getWidth(), sn.getLength())
+Paddle::Paddle(int _x, int _y,int size, Screen sn) : coordinate(_x, _y, sn.getWidth(), sn.getLength())
 {
-	size = 1;
-	name = "paddle";
-	pattern = '|';
+	m_size = size;
+	m_name = "paddle";
+	m_pattern = '|';
 }
 
 
@@ -21,9 +21,25 @@ Paddle::~Paddle()
 {
 }
 
-std::string Paddle::displayCords() {
-	std::stringstream tmp;
-	tmp << "( " << x << " , " << y << " )" << std::endl;;
-	return tmp.str();
+void Paddle::paddleBounce(Ball &ball)
+{
+	int middlePointY = y + (m_size + 1) / 2;
+	
+	if (ball.getY() < middlePointY) { // if ball hits the top 2 
+		// move up 45 degree
+		ball.v.setVX(ball.v.getVX() * -1);
+		ball.v.setVY(ball.v.getVY() - ball.v.getVX());
+	}
+	else if (ball.getY() == middlePointY) { //if else ball hit the middle move 
+		ball.v.setVX(ball.v.getVX() * -1);
+	}
+	else if (ball.getY() > middlePointY) { // if else  ball hits bottom 2
+		//	move down 45 degree
+		ball.v.setVX(ball.v.getVX() * -1);
+		ball.v.setVY(ball.v.getVY() + ball.v.getVX());
+	}
+	
 }
+
+
 

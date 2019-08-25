@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="velocity">
-    <Position X="7.75" Y="1" Width="1.5" />
+    <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAgQAEAgAAAAAAAAAAABAAAAQAAAgAAAA=</HashCode>
       <FileName>velocity.h</FileName>

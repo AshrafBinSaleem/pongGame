@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <sstream>
 #include "velocity.h"
 
 class coordinate
@@ -25,5 +27,7 @@ public:
 	void setY(int _y) { y = _y; }
 	//c represents speed and dt represents data time.
 	void changePosition(velocity& c, int dt);
+
+	std::string displayCords();
 };
 

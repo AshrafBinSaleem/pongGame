@@ -18,8 +18,3 @@ Ball::~Ball()
 {
 }
 
-std::string Ball::displayCords() {
-	std::stringstream tmp;
-	tmp << "( " << x << " , " << y << " )" << std::endl;;
-	return tmp.str();
-}

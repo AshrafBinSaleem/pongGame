@@ -16,5 +16,6 @@ public:
 	void setWidth(size_t w) { width = w; }
 	void setLength(size_t l) { length = l; }
 	~Screen();
-};
 
+	void draw()
+};

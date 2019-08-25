@@ -7,18 +7,17 @@
 
 class Ball : public coordinate
 {
-	velocity v;
+	
 public:
 	Ball();
 	
 	Ball(int x,int y, int vx, int vy, Screen sn);
 
 	~Ball();
-	
+	velocity v;
 	void updatePosition() {
 		changePosition(v, 1);
 	}
 
-	std::string displayCords();
 };
 

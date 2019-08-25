@@ -6,8 +6,8 @@ coordinate::coordinate(): x(0), y(0)
 {
 }
 
-coordinate::coordinate(int _x, int _y, int w, int l) : x(_x), y(_y), width(w), lenght(l)
-{
+coordinate::coordinate(int _x, int _y, int w, int l) : x(_x), y(_y), width(w), lenght(l){
+
 }
 coordinate::~coordinate()
 {
@@ -71,4 +71,10 @@ void coordinate::moveUp() {
 void coordinate::moveDown() {
 	y++;
 	checkBoundary();
+}
+
+std::string coordinate::displayCords() {
+	std::stringstream tmp;
+	tmp << "( " << x << " , " << y << " )" ;
+	return tmp.str();
 }
