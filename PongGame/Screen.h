@@ -1,12 +1,25 @@
-#pragma once
+#ifndef SCREEN_H
+#define SCREEN_H
+
+#include "pch.h"
+#include <iostream>
+#include <vector>
+#include <string>
+#include "coordinate.h"
+#include "Paddle.h"
+
+class Paddle;
+class Ball;
+
 class Screen
 {
+private:
+	std::vector<std::string> display;
 public:
+
 	Screen();
 	size_t width;
 	size_t length;
-
-	void draw() {};
 
 	Screen(size_t w, size_t l);
 
@@ -17,5 +30,9 @@ public:
 	void setLength(size_t l) { length = l; }
 	~Screen();
 
-	void draw()
+	void printDisplay();
+	void draw(coordinate ball, Paddle paddle1, Paddle paddle2);
 };
+
+
+#endif

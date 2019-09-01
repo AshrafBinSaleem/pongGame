@@ -1,9 +1,13 @@
-#pragma once
+#ifndef BALL_H
+#define BALL_H
+
 #include "coordinate.h"
 #include "velocity.h"
 #include <iostream>
 #include <sstream>
 #include "Screen.h"
+
+class Screen;
 
 class Ball : public coordinate
 {
@@ -21,3 +25,4 @@ public:
 
 };
 
+#endif

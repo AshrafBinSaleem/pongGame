@@ -1,4 +1,6 @@
-#pragma once
+#ifndef COORDINATE_H
+#define COORDINATE_H
+
 #include <iostream>
 #include <sstream>
 #include "velocity.h"
@@ -30,4 +32,4 @@ public:
 
 	std::string displayCords();
 };
-
+#endif

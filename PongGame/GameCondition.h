@@ -19,7 +19,8 @@ public:
 
 	//Propertise 
 	Screen m_screen;
-	Paddle m_paddle;
+	Paddle m_paddle1;
+	Paddle m_paddle2;
 	Ball m_ball;
 	
 };

@@ -7,9 +7,9 @@
 #include <conio.h>
 
 #include "GameCondition.h"
-
 int main()
 {
+	
 	GameCondition game;
 	game.start();
 }

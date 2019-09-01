@@ -1,9 +1,14 @@
-#pragma once
+#ifndef PADDLE_H
+#define PADDLE_H
+
 #include <iostream>
 #include <sstream>
 #include "coordinate.h"
 #include "Screen.h"
 #include "Ball.h"
+
+class Screen;
+class Ball;
 
 class Paddle : public coordinate
 {
@@ -30,4 +35,6 @@ public:
 
 
 };
+
+#endif
 
