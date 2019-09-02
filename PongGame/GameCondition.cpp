@@ -9,13 +9,16 @@ void GameCondition::start() {
 	using namespace std::chrono; // nanoseconds, system_clock, seconds
 
 	int count = 0;
-	while (count < 200)
+	while (count < 600)
 	{
 	//	//call isCollision here
 		if (isCollieded()) {
 			m_paddle1.paddleBounce(m_ball);
 		}
 
+		else if (isCollieded()) {
+			m_paddle2.paddleBounce(m_ball);
+		}
 	//	m_ball.updatePosition();
 	//	std::cout << m_ball.displayCords() << "\t" << m_paddle.displayCords() << std::endl;
 
@@ -32,6 +35,12 @@ bool GameCondition::isCollieded()
 {
 	for (int i = 0; i < m_paddle1.getSize(); i++) {
 		if (m_ball.getX() == m_paddle1.getX() && m_ball.getY() == m_paddle1.getY() + i) {
+			return true;
+		}
+	}
+
+	for (int i = 0; i < m_paddle2.getSize(); i++) {
+		if (m_ball.getX() == m_paddle2.getX() && m_ball.getY() == m_paddle2.getY() + i) {
 			return true;
 		}
 	}

@@ -36,7 +36,10 @@ void Screen::draw(coordinate ball, Paddle paddle1, Paddle paddle2) {
 	for (int i = 1; i < length-1; i++) {
 		display[i] = temp;
 	}
-
+	for (int i = 0; i < width; i++) {
+		display[0][i] = '#';
+		display[length - 1][i] = '#';
+	}
 	//Printing ball
 	display[ball.getY()][ball.getX()] = 'O';
 
