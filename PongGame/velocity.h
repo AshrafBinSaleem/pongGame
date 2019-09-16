@@ -18,5 +18,8 @@ public:
 
 	velocity();
 	~velocity();
+
+	void increaseSpeedVY() { vy++; }
+	void decreaseSpeedVY() { vy--; }
 };
 

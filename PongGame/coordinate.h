@@ -28,7 +28,7 @@ public:
 	void setX(int _x) { x = _x; }
 	void setY(int _y) { y = _y; }
 	//c represents speed and dt represents data time.
-	void changePosition(velocity& c, int dt);
+	void changePosition(velocity& c, int dt, bool doBounce = true);
 
 	std::string displayCords();
 };

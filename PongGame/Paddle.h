@@ -6,6 +6,7 @@
 #include "coordinate.h"
 #include "Screen.h"
 #include "Ball.h"
+#include "velocity.h"
 
 class Screen;
 class Ball;
@@ -18,6 +19,7 @@ class Paddle : public coordinate
 	std::string m_name;
 	//Pattern as in design of paddle
 	char m_pattern;
+	velocity pv;
 public:
 	Paddle();
 	Paddle(int x, int y, int size, Screen sn);
@@ -32,8 +34,10 @@ public:
 	void setSize(int _size) { m_size = _size; }
 	void setName(std::string _name) { m_name = _name; }
 	void setPattern(char _pattern) { m_pattern = _pattern; }
-
-
+	void moveUp();
+	void moveDown();
+	
+	void updatePosition() { changePosition(pv, 1, false); }
 };
 
 #endif

@@ -2,7 +2,7 @@
 #include "GameCondition.h"
 #include <chrono>
 #include <thread>
-
+#include <windows.h>
 void GameCondition::start() {
 
 	using namespace std::this_thread; // sleep_for, sleep_until
@@ -11,6 +11,30 @@ void GameCondition::start() {
 	int count = 0;
 	while (count < 600)
 	{
+	
+
+		if (GetAsyncKeyState(VK_DOWN) && m_paddle2.getY() < (m_screen.getLength() - m_paddle2.getSize() - 1))
+		{
+
+			m_paddle2.moveUp();
+		}
+
+		if (GetAsyncKeyState(VK_UP) && m_paddle2.getY() > 1 )
+		{
+			m_paddle2.moveDown();
+			
+		}
+		//This is w
+		if (GetAsyncKeyState(0x53) && m_paddle1.getY() < (m_screen.getLength() - m_paddle1.getSize() - 1))
+		{
+			m_paddle1.moveUp();
+		}
+		//This is s
+		if (GetAsyncKeyState(0x57) && m_paddle1.getY() > 1)
+		{
+			m_paddle1.moveDown();
+
+		}
 	//	//call isCollision here
 		if (isCollieded()) {
 			m_paddle1.paddleBounce(m_ball);
@@ -27,6 +51,7 @@ void GameCondition::start() {
 		m_ball.updatePosition();
 
 		sleep_for(nanoseconds(100000000));
+
 		count++;
 	}
 }
@@ -51,7 +76,7 @@ bool GameCondition::isCollieded()
 
 GameCondition::GameCondition() : m_screen(50, 50), 	m_paddle1(5, 21, 5, m_screen), m_paddle2(45, 21, 5, m_screen), m_ball(23, 23, -1, 0, m_screen)
 {
-
+ 
 }
 
 

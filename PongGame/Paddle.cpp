@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Paddle.h"
-
+#include "Screen.h"
 
 Paddle::Paddle() : coordinate()
 {
@@ -9,7 +9,7 @@ Paddle::Paddle() : coordinate()
 	m_pattern = '|';
 }
 
-Paddle::Paddle(int _x, int _y,int size, Screen sn) : coordinate(_x, _y, sn.getWidth(), sn.getLength())
+Paddle::Paddle(int _x, int _y,int size, Screen sn) : coordinate(_x, _y, sn.getWidth(), sn.getLength()), pv()
 {
 	m_size = size;
 	m_name = "paddle";
@@ -38,7 +38,28 @@ void Paddle::paddleBounce(Ball &ball)
 		ball.v.setVX(ball.v.getVX() * -1);
 		ball.v.setVY(ball.v.getVY() + ball.v.getVX());
 	}
+}
+
+void Paddle::moveUp() 
+{ 
+	if (pv.getVY() < 0)
+		pv.setVY(0);
 	
+  pv.increaseSpeedVY(); 
+  updatePosition(); 
+  if (y <= 0) {
+	  y = 3;
+  }
+}
+
+void Paddle::moveDown() { 
+	if (pv.getVY() > 0)
+		pv.setVY(0);
+	pv.decreaseSpeedVY(); 
+	updatePosition(); 
+	if (y > 50) {
+		y = 48;
+	}
 }
 
 
