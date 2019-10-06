@@ -43,11 +43,19 @@ void Screen::draw(coordinate ball, Paddle paddle1, Paddle paddle2) {
 	//Printing ball
 	display[ball.getY()][ball.getX()] = 'O';
 
-	//Printing paddles
-	for (int i = 0; i < paddle1.getSize(); i++) {
-		display[paddle1.getY() + i][paddle1.getX()] = '|';
-		display[paddle2.getY() + i][paddle2.getX()] = '|';
+	try
+	{
+		//Printing paddles
+		for (int i = 0; i < paddle1.getSize(); i++) {
+			display[paddle1.getY() + i][paddle1.getX()] = '|';
+			display[paddle2.getY() + i][paddle2.getX()] = '|';
+		}
 	}
+	catch (const std::exception&)
+	{
+		std::cout << "ERROR";
+	}
+	
 	
 	printDisplay();
 }

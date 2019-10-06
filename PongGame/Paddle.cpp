@@ -40,25 +40,26 @@ void Paddle::paddleBounce(Ball &ball)
 	}
 }
 
-void Paddle::moveUp() 
+void Paddle::moveDown() 
 { 
 	if (pv.getVY() < 0)
 		pv.setVY(0);
 	
   pv.increaseSpeedVY(); 
   updatePosition(); 
-  if (y <= 0) {
-	  y = 3;
+  if (y > 44) {
+	  y = 44;
   }
+ 
 }
 
-void Paddle::moveDown() { 
+void Paddle::moveUp() { 
 	if (pv.getVY() > 0)
 		pv.setVY(0);
 	pv.decreaseSpeedVY(); 
 	updatePosition(); 
-	if (y > 50) {
-		y = 48;
+	if (y <= 0) {
+		y = 1;
 	}
 }
 

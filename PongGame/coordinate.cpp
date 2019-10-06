@@ -62,6 +62,8 @@ void coordinate::changePosition(velocity& c, int dt, bool doBounce)
 	y = y + c.getVY() * dt;
 	if (doBounce)
 		checkBoundaryBounce(c);
+	else
+		checkBoundary();
 	
 }
 
@@ -79,5 +81,3 @@ std::string coordinate::displayCords() {
 	tmp << "( " << x << " , " << y << " )" ;
 	return tmp.str();
 }
-
-
